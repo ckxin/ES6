@@ -1,2 +1,2 @@
 # ES6
-some text for ES6
+Some notes for ES6
