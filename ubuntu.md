@@ -28,5 +28,30 @@
 	file inputcut2.mp4
     file inputcut3.mp4
     
+### 修改帧率
+	ffmpeg -i input.mp4 -qscale 0 -r 24 -y output.mp4
+    // 统一修改为24帧
+    
+### 图片合成视频
+	 ffmpeg  -framerate 1  -i img%d.jpg -r 25  output.mp4
+	// -framerate 1 输入时帧率，即输入时每秒显示几张图片，此时每秒显示一张图片
+    // -r 25 输出时帧率，即播放时每秒显示帧率。此时为25帧，对应输入，即每张图片扩展为25帧
+    
 ## 3. 当遇到以下类似情况时，请使用Tab键选择确定或取消
 ![](/home/ckx/Moeditor/Ubuntu/img_choose.jpg)
+
+## 4. 修改文件权限
+	chmod -R +777 WhoJoy/
+    // 修改整个文件夹的WhoJoy(包括内部的所有文件）的权限
+    // +777 加上所有权限
+    // -777 去掉所有权限
+    
+## 5. 脚本文件执行 sudo 命令（在脚本中输入密码）
+	#! /bin/bash
+	echo “password” | sudo apt-get update
+    // 注意：这样脚本中会显示你的密码，可能会暴露密码
+    
+## 6. 重命名文件
+	mv oldname newname
+    
+## 7. 
