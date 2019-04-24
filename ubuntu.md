@@ -8,6 +8,12 @@
     
 ### 转换视频格式
 	ffmpeg -i  testrmvb.rmvb  -c:v libx264 -strict -2 testrmvb.mp4
+	
+### 转换视频和音频格式
+	ffmpeg -i test.mp4 -c:v h264 -c:a aac -strict -2 test_convert.mp4 // 将test.mp4的视频编码转换为h.264,音频编码转换为aac
+	
+### 仅转换视频的音频格式
+	ffmpeg -i test.mp4 -c:v copy -c:a aac -strict -2 test_convert.mp4 // 将test.mp4的音频编码转换为aac,视频编码保持原来的
     
 ### 修改视频分辨率
 	ffmpeg -i 1.mp4 -strict -2 -vf scale=720:480 4.mp4 
